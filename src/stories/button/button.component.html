@@ -1,3 +1,13 @@
-<button class="button-base" [ngStyle]="{ backgroundColor: backgroundColor }">
+<button
+    mat-button
+    [ngClass]="
+        type === 'basic'
+            ? 'mat-button'
+            : type === 'fab' || type === 'mini-fab'
+            ? 'mat-' + type
+            : 'mat-' + type + '-button'
+    "
+    color="{{ color }}"
+>
     {{ label }}
 </button>

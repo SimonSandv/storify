@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
-import Colors from "../../shared/colors.enum";
+import Colors from "../../shared/enums/colors.enum";
 
-enum ButtonColor {
+/* enum ButtonColor {
   DEFAULT = "default",
   PROCESS = "process",
   APPROVE = "approve",
   RETURN = "return",
   REJECT = "reject",
-}
+} */
 
 @Component({
   selector: "app-button",
@@ -16,18 +16,28 @@ enum ButtonColor {
 })
 export class ButtonComponent implements OnInit {
   /**
-   * Button contents
+   * Button text
    *
    * @required
    */
   @Input()
   label = "Button";
-
+  /**
+   * Button color
+   *
+   * @required
+   */
   @Input()
-  size: "small" | "medium" | "large" = "medium";
+  color: "primary" | "accent" | "warn" = "primary";
 
+  /**
+   * Button style
+   *
+   * @required
+   */
   @Input()
-  backgroundColor: string = "#FFFFFF";
+  type: "basic" | "raised" | "stroked" | "flat" | "fab" | "icon" | "mini-fab" =
+    "basic";
 
   @Output()
   clicked = new EventEmitter<Event>();

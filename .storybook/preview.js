@@ -1,5 +1,6 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
+import { ColorPalette } from "../src/shared/enums/colors.enum";
 setCompodocJson(docJson);
 
 export const parameters = {
@@ -11,4 +12,12 @@ export const parameters = {
     },
   },
   docs: { inlineStories: true },
+  colorPicker: {
+    primaryPalette: 'PrimaryPalette',
+    palettes: [
+      {
+        name: "PrimaryPalette", palette: ColorPalette
+      }
+    ]
+  }
 }

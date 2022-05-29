@@ -1,13 +1,19 @@
 import { Story, Meta } from "@storybook/angular/types-6-0";
 import { ButtonComponent } from "./button.component";
-import Colors from "../../shared/colors.enum";
+import Colors from "../../shared/enums/colors.enum";
+import { moduleMetadata } from "@storybook/angular";
+import { MatButtonModule } from "@angular/material/button";
 
 export default {
   title: "Components/Button",
   component: ButtonComponent,
-  argTypes: {
-    backgroundColor: { control: { type: "color", presetColors: Colors } },
-  },
+  argTypes: {},
+  decorators: [
+    moduleMetadata({
+      declarations: [],
+      imports: [MatButtonModule],
+    }),
+  ],
 } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => {
@@ -19,5 +25,6 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => {
 export const Basic = Template.bind({});
 Basic.args = {
   label: "Button",
-  backgroundColor: "#FFFFFF",
+  color: "primary",
+  type: "basic",
 };

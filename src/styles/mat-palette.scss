@@ -1,0 +1,126 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$hero-blue: (
+    900: #000000,
+    800: #071d49,
+    700: #280071,
+    600: #4c00c8,
+    500: #5400e2,
+    400: #b1b5ce,
+    300: #e0e1eb,
+    200: #eff0f5,
+    100: #f7f7fa,
+    50: #ffffff,
+    A100: #f9423a,
+    A200: #f9423a,
+    A400: #f9423a,
+    A700: #f9423a,
+    contrast: (
+        900: #ffffff,
+        800: #ffffff,
+        700: #ffffff,
+        600: #ffffff,
+        500: #ffffff,
+        400: #eacbbb,
+        300: #eacbbb,
+        200: #eacbbb,
+        100: #eacbbb,
+        50: #eacbbb,
+    ),
+);
+
+$peach: (
+    900: #633231,
+    800: #633231,
+    700: #eacbbb,
+    600: #f7e9e6,
+    500: #f7e9e6,
+    400: #f7e9e6,
+    300: #f7e9e6,
+    200: #f7e9e6,
+    100: #f7e9e6,
+    50: #f7e9e6,
+    A100: #633231,
+    A200: #eacbbb,
+    A400: #f7e9e6,
+    A700: #f7e9e6,
+    contrast: (
+        900: #ffffff,
+        800: #ffffff,
+        700: #ffffff,
+        600: #ffffff,
+        500: #ffffff,
+        400: #eacbbb,
+        300: #eacbbb,
+        200: #eacbbb,
+        100: #eacbbb,
+        50: #eacbbb,
+    ),
+);
+
+$red: (
+    900: #bc1c1f,
+    800: #cb282b,
+    700: #d82f33,
+    600: #ea3939,
+    500: #f9443a,
+    400: #f35454,
+    300: #e87476,
+    200: #f19b9c,
+    100: #ffced3,
+    50: #ffebef,
+    A100: #633231,
+    A200: #eacbbb,
+    A400: #f7e9e6,
+    A700: #f7e9e6,
+    contrast: (
+        900: #ffffff,
+        800: #ffffff,
+        700: #ffffff,
+        600: #ffffff,
+        500: #ffffff,
+        400: #eacbbb,
+        300: #eacbbb,
+        200: #eacbbb,
+        100: #eacbbb,
+        50: #eacbbb,
+    ),
+);
+
+$light-primary: mat.define-palette($hero-blue, 700);
+$light-accent: mat.define-palette($peach, A200, A100, A400);
+$light-warn: mat.define-palette($red);
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $light-primary,
+            accent: $light-accent,
+            warn: $light-warn,
+        ),
+    )
+);
+/* $dark-primary: mat.define-palette(mat.$indigo-palette, 500);
+$dark-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$dark-warn: mat.define-palette(mat.$red-palette);
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: $dark-primary,
+            accent: $dark-accent,
+            warn: $dark-warn,
+        ),
+    )
+); */
+
+@include mat.core-theme($light-theme);
+/* @include mat.button-theme($light-theme); */
+@include mat.all-component-themes($light-theme);
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

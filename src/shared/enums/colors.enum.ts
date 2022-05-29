@@ -1,3 +1,11 @@
+type ColorPaletteAsArray = {
+  label: string;
+  values: {
+    label: string;
+    value: string;
+  }[];
+};
+
 /* enum Colors {
   HeroBlue = "#280071",
   DarkBlue = "#071D49",
@@ -93,6 +101,50 @@ const Colors = [
   { color: "#666666", title: "Secondary Text" },
   { color: "#333333", title: "Primary Text" },
 ];
+
+export const ColorPalette: ColorPaletteAsArray = {
+  label: "primaryPalette",
+  values: [
+    { value: "#280071", label: "Hero Blue" },
+    { value: "#071D49", label: "Dark Blue" },
+    { value: "#26D07C", label: "CTA Green" },
+    { value: "#F9423A", label: "Hero Red" },
+    { value: "#FFFFFF", label: "White" },
+    { value: "#633231", label: "Maroon" },
+    { value: "#E9EC6B", label: "CTA Yellow" },
+    { value: "#B1B5CE", label: "Violet" },
+    { value: "#53565A", label: "Cool Gray" },
+    { value: "#000000", label: "Black" },
+    { value: "#EACBBB", label: "Peach" },
+    { value: "#6E6259", label: "Warm Grey" },
+    { value: "#004A75", label: "Blue 1" },
+    { value: "#0E76B7", label: "Blue 2" },
+    { value: "#62B3E5", label: "Blue 3" },
+    { value: "#AFD8F1", label: "Blue 4" },
+    { value: "#E5F6FE", label: "Blue 5" },
+    { value: "#9B0C4B", label: "Red 1" },
+    { value: "#D51067", label: "Red 2" },
+    { value: "#E56385", label: "Red 3" },
+    { value: "#F0B3CA", label: "Red 4" },
+    { value: "#FFEFF3", label: "Red 5" },
+    { value: "#266232", label: "Green 1" },
+    { value: "#348644", label: "Green 2" },
+    { value: "#6CC04A", label: "Green 3" },
+    { value: "#BDE093", label: "Green 4" },
+    { value: "#F1FCED", label: "Green 5" },
+    { value: "#E36A49", label: "Orange 1" },
+    { value: "#F78D2D", label: "Orange 2" },
+    { value: "#FFBE85", label: "Orange 3" },
+    { value: "#FDEFE2", label: "Orange 4" },
+    { value: "#F8F8F8", label: "Background" },
+    { value: "#EEEEEE", label: "Component Base" },
+    { value: "#DDDDDD", label: "Line Color" },
+    { value: "#CCCCCC", label: "Component Outline" },
+    { value: "#999999", label: "Disabled Text" },
+    { value: "#666666", label: "Secondary Text" },
+    { value: "#333333", label: "Primary Text" },
+  ],
+};
 
 /* interface IColors {
   HeroBlue: "#280071";
